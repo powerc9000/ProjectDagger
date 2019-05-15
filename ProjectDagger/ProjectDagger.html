@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="ProjectDagger" content="PianoPlayer">
+    <meta name="keywords" content="Piano, keyboard, music">
+    <meta name="author" content="KRStubbs">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<header>
+    <nav>
+
+    </nav>
+</header>
+
+<body>
+    <button onclick="f()" type="button"><img src="whiteKeyLeft.png"></button>
+    <button onclick="d()" type="button"><img src="BlackKey.png"></button>
+    <button onclick="g()" type="button"><img src="MiddleWhiteKey.png"></button>
+    <button onclick="myFunction()" type="button"><img src="BlackKey.png"></button>
+    <button onclick="a()" type="button"><img src="MiddleWhiteKey.png"></button>
+    <button onclick="myFunction()" type="button"><img src="BlackKey.png"></button>
+    <button onclick="b()" type="button"><img src="WhiteKeyRight.png"></button>
+    <button onclick="myFunction()" type="button"><img src="whiteKeyLeft.png"></button>
+
+
+    <p id="note"></p>
+
+    <script>
+        function f() {
+            document.getElementById("note").innerHTML = "F";
+            var audio = new Audio('f.wav');
+            audio.play();
+        }
+
+        function g() {
+            document.getElementById("note").innerHTML = "G";
+            var audio = new Audio('g.wav');
+            audio.play();
+        }
+
+        function a() {
+            document.getElementById("note").innerHTML = "A";
+            var audio = new Audio('a.wav');
+            audio.play();
+        }
+
+        function b() {
+            document.getElementById("note").innerHTML = "B";
+            var audio = new Audio('c.wav');
+            audio.play();
+        }
+
+    </script>
+
+
+
+</body>
+
+<footer>
+
+
+</footer>
