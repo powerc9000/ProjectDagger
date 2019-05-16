@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="ProjectDagger" content="PianoPlayer">
+    <meta name="keywords" content="Piano, keyboard, music">
+    <meta name="author" content="KRStubbs">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<header>
+    <nav>
+
+    </nav>
+</header>
+
+<body>
+
+    <button onclick="c()" type="button"><img id="leftc" src="whiteKeyLeft.png"></button>
+    <button onclick="d()" type="button"><img src="BlackKey.png"></button>
+    <button onclick="d()" type="button"><img id="middled" src="MiddleWhiteKey.png"></button>
+    <button onclick="myFunction()" type="button"><img src="BlackKey.png"></button>
+    <button onclick="e()" type="button"><img id="righte" src="WhiteKeyRight.png"></button>
+    <button onclick="f()" type="button"><img id="leftf" src="whiteKeyLeft.png"></button>
+    <button onclick="myFunction()" type="button"><img src="BlackKey.png"></button>
+    <button onclick="g()" type="button"><img id="middleg" src="MiddleWhiteKey.png"></button>
+    <button onclick="d()" type="button"><img src="BlackKey.png"></button>
+    <button onclick="a()" type="button"><img id="righta" src="WhiteKeyRight.png"></button>
+
+
+    <h1>
+        <p id="note"></p>
+    </h1>
+
+    <p><img id="song" src="MaryHadALittleLamb.jpg"></p>
+    <script>
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+
+        async function a() {
+            document.getElementById("note").innerHTML = "A";
+            document.getElementById("righta").src = "PressedWhiteKeyright.png";
+            var audio = new Audio('a.wav');
+            audio.play();
+            await sleep(1000);
+            document.getElementById("righta").src = "WhiteKeyRight.png";
+        }
+        async function b() {
+            document.getElementById("note").innerHTML = "B";
+            document.getElementById("leftc").src = "PressedwhiteKeyleft.png";
+            var audio = new Audio('c.wav');
+            audio.play();
+            await sleep(1000);
+            document.getElementById("leftc").src = "whiteKeyleft.png";
+        }
+        async function c() {
+            document.getElementById("note").innerHTML = "C";
+            document.getElementById("leftc").src = "PressedwhiteKeyleft.png";
+            var audio = new Audio('c.wav');
+            audio.play();
+            await sleep(1000);
+            document.getElementById("leftc").src = "whiteKeyleft.png";
+
+        }
+        async function d() {
+            document.getElementById("note").innerHTML = "D";
+            document.getElementById("middled").src = "PressedwhiteKeyleft.png";
+            var audio = new Audio('d.wav');
+            audio.play();
+            await sleep(1000);
+            document.getElementById("middled").src = "whiteKeyleft.png";
+        }
+        async function e() {
+            document.getElementById("note").innerHTML = "E";
+            document.getElementById("righte").src = "PressedWhiteKeyRight.png";
+            var audio = new Audio('e.wav');
+            audio.play();
+            await sleep(1000);
+            document.getElementById("righte").src = "WhiteKeyRight.png";
+        }
+        async function f() {
+            document.getElementById("note").innerHTML = "F";
+            document.getElementById("leftf").src = "PressedwhiteKeyleft.png";
+            var audio = new Audio('f.wav');
+            audio.play();
+            await sleep(1000);
+            document.getElementById("leftf").src = "whiteKeyleft.png";
+        }
+        async function g() {
+            document.getElementById("note").innerHTML = "G";
+            document.getElementById("middleg").src = "PressedWhiteKeyRight.png";
+            var audio = new Audio('g.wav');
+            audio.play();
+            await sleep(1000);
+            document.getElementById("middleg").src = "WhiteKeyRight.png";
+        }
+
+    </script>
+
+
+
+</body>
+
+<footer>
+
+
+</footer>

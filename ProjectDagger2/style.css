@@ -1,0 +1,19 @@
+button{
+    padding: 0px;
+    background: black;
+    width: 8%;
+    margin:0px;
+}
+
+img{
+
+  margin-left: auto;
+  margin-right: auto;
+  height:100%;
+
+}
+
+body{
+    display: block;
+    height:40%;
+}
