@@ -7,35 +7,59 @@
     <meta name="author" content="KRStubbs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Childs Play Logo(1).png">
 
 </head>
 
 <header>
     <nav>
-
+        <ul>
+            <li><img src="Childs Play Logo(1).png" style="width: 10%;"></li>
+            <li><a>About Childs Play</a></li>
+            <li><a>Songs</a></li>
+            <li><a>Add a Song</a></li>
+        </ul>
     </nav>
+
 </header>
 
 <body>
 
-    <button onclick="c()" type="button"><img id="leftc" src="whiteKeyLeft.png"></button>
-    <button onclick="d()" type="button"><img src="BlackKey.png"></button>
-    <button onclick="d()" type="button"><img id="middled" src="MiddleWhiteKey.png"></button>
-    <button onclick="myFunction()" type="button"><img src="BlackKey.png"></button>
-    <button onclick="e()" type="button"><img id="righte" src="WhiteKeyRight.png"></button>
-    <button onclick="f()" type="button"><img id="leftf" src="whiteKeyLeft.png"></button>
-    <button onclick="myFunction()" type="button"><img src="BlackKey.png"></button>
-    <button onclick="g()" type="button"><img id="middleg" src="MiddleWhiteKey.png"></button>
-    <button onclick="d()" type="button"><img src="BlackKey.png"></button>
-    <button onclick="a()" type="button"><img id="righta" src="WhiteKeyRight.png"></button>
-
+    <div id="keyboard">
+        <button onclick="c()" type="button"><img id="leftc" src="whiteKeyLeft.png"></button><!--
+        --><button onclick="d()" type="button"><img src="BlackKey.png"></button><!--
+    --><button onclick="d()" type="button"><img id="middled" src="MiddleWhiteKey.png"></button><!--
+    --><button onclick="myFunction()" type="button"><img src="BlackKey.png"></button><!--
+    --><button onclick="e()" type="button"><img id="righte" src="WhiteKeyRight.png"></button><!--
+        --><button onclick="f()" type="button"><img id="leftf" src="whiteKeyLeft.png"></button><!--
+        --><button onclick="myFunction()" type="button"><img src="BlackKey.png"></button><!--
+        --><button onclick="g()" type="button"><img id="middleg" src="MiddleWhiteKey.png"></button><!--
+        --><button onclick="d()" type="button"><img src="BlackKey.png"></button><!--
+        --><button onclick="a()" type="button"><img id="righta" src="WhiteKeyRight.png"></button><!--
+        -->
+    </div>
+    <p id="song"><img id="song" src="MaryHadALittleLamb.jpg"></p>
+    <div class="slidecontainer">
+        <h1>Volume:
+            <span id="demo"></span></h1>
+        <input type="range" min="1" max="100" value="20" class="slider" id="myRange">
+    </div>
 
     <h1>
         <p id="note"></p>
     </h1>
 
-    <p><img id="song" src="MaryHadALittleLamb.jpg"></p>
+
     <script>
+
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+        }
 
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
@@ -46,6 +70,7 @@
             document.getElementById("note").innerHTML = "A";
             document.getElementById("righta").src = "PressedWhiteKeyright.png";
             var audio = new Audio('a.wav');
+            audio.volume = slider.value / 100;
             audio.play();
             await sleep(1000);
             document.getElementById("righta").src = "WhiteKeyRight.png";
@@ -54,6 +79,7 @@
             document.getElementById("note").innerHTML = "B";
             document.getElementById("leftc").src = "PressedwhiteKeyleft.png";
             var audio = new Audio('c.wav');
+            audio.volume = slider.value / 100;
             audio.play();
             await sleep(1000);
             document.getElementById("leftc").src = "whiteKeyleft.png";
@@ -62,6 +88,7 @@
             document.getElementById("note").innerHTML = "C";
             document.getElementById("leftc").src = "PressedwhiteKeyleft.png";
             var audio = new Audio('c.wav');
+            audio.volume = slider.value / 100;
             audio.play();
             await sleep(1000);
             document.getElementById("leftc").src = "whiteKeyleft.png";
@@ -71,6 +98,7 @@
             document.getElementById("note").innerHTML = "D";
             document.getElementById("middled").src = "PressedwhiteKeyleft.png";
             var audio = new Audio('d.wav');
+            audio.volume = slider.value / 100;
             audio.play();
             await sleep(1000);
             document.getElementById("middled").src = "whiteKeyleft.png";
@@ -79,6 +107,7 @@
             document.getElementById("note").innerHTML = "E";
             document.getElementById("righte").src = "PressedWhiteKeyRight.png";
             var audio = new Audio('e.wav');
+            audio.volume = slider.value / 100;
             audio.play();
             await sleep(1000);
             document.getElementById("righte").src = "WhiteKeyRight.png";
@@ -87,6 +116,7 @@
             document.getElementById("note").innerHTML = "F";
             document.getElementById("leftf").src = "PressedwhiteKeyleft.png";
             var audio = new Audio('f.wav');
+            audio.volume = slider.value / 100;
             audio.play();
             await sleep(1000);
             document.getElementById("leftf").src = "whiteKeyleft.png";
@@ -95,6 +125,7 @@
             document.getElementById("note").innerHTML = "G";
             document.getElementById("middleg").src = "PressedWhiteKeyRight.png";
             var audio = new Audio('g.wav');
+            audio.volume = slider.value / 100;
             audio.play();
             await sleep(1000);
             document.getElementById("middleg").src = "WhiteKeyRight.png";
@@ -107,6 +138,8 @@
 </body>
 
 <footer>
-
+    <p>
+        <h6>This is a K.R.Stubbs Website. To contact K.R.Stubbs email: k.r.stubbs@gmail.com</h6>
+    </p>
 
 </footer>

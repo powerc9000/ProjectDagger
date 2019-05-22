@@ -1,19 +1,54 @@
 button{
     padding: 0px;
-    background: black;
+    background:none;
     width: 8%;
     margin:0px;
+    outline: none;
+    border-style: none;
 }
 
-img{
+button img{
 
   margin-left: auto;
   margin-right: auto;
   height:100%;
+  
 
 }
 
 body{
     display: block;
     height:40%;
+    
 }
+#keyboard{
+    display:block;
+    float:left;
+    margin-right: auto;
+    width:49%;
+}
+#song img{
+    width:49%;
+    max-height: 500px;
+}
+
+ul{
+    background-color:tan;
+    list-style-type: none;
+    margin: 0;
+    padding: 8px;
+    padding-right:12px;
+    overflow: auto;
+
+
+}
+
+li{
+    
+    float: left; 
+    padding-right:12px;
+    margin:auto;
+
+
+  }
+
