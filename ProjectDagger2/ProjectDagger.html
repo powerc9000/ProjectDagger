@@ -27,16 +27,12 @@
 
     <div id="keyboard">
         <button onclick="c()" type="button"><img id="leftc" src="whiteKeyLeft.png"></button><!--
-        --><button onclick="d()" type="button"><img src="BlackKey.png"></button><!--
-    --><button onclick="d()" type="button"><img id="middled" src="MiddleWhiteKey.png"></button><!--
-    --><button onclick="myFunction()" type="button"><img src="BlackKey.png"></button><!--
-    --><button onclick="e()" type="button"><img id="righte" src="WhiteKeyRight.png"></button><!--
-        --><button onclick="f()" type="button"><img id="leftf" src="whiteKeyLeft.png"></button><!--
-        --><button onclick="myFunction()" type="button"><img src="BlackKey.png"></button><!--
-        --><button onclick="g()" type="button"><img id="middleg" src="MiddleWhiteKey.png"></button><!--
-        --><button onclick="d()" type="button"><img src="BlackKey.png"></button><!--
-        --><button onclick="a()" type="button"><img id="righta" src="WhiteKeyRight.png"></button><!--
-        -->
+        --><button onclick="d()" type="button"><img id="leftd" src="BlackKey.png"></button><!--
+    --><button onclick="e()" type="button"><img id="lefte" src="MiddleWhiteKey.png"></button><!--
+    --><button onclick="f()" type="button"><img id="leftf" src="BlackKey.png"></button><!--
+    --><button onclick="g()" type="button"><img id="leftg" src="WhiteKeyRight.png"></button><!--
+        --><button onclick="a()" type="button"><img id="lefta" src="whiteKeyLeft.png"></button>
+        
     </div>
     <p id="song"><img id="song" src="MaryHadALittleLamb.jpg"></p>
     <div class="slidecontainer">
@@ -64,73 +60,31 @@
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
-
-
-        async function a() {
-            document.getElementById("note").innerHTML = "A";
-            document.getElementById("righta").src = "PressedWhiteKeyright.png";
-            var audio = new Audio('a.wav');
-            audio.volume = slider.value / 100;
-            audio.play();
-            await sleep(1000);
-            document.getElementById("righta").src = "WhiteKeyRight.png";
+        
+        
+        function makeNote(id, name, wav, up, down){
+            let sound;
+            window[name] = function(){
+                if(sound) sound.stop();
+                document.getElementById("note").innerHTML = name.toUpperCase();
+                document.getElementById(id).src = down
+                sound = new Audio(wav);
+                sound.volume = slider.value / 100;
+                sound.play();
+                
+                await sleep(1000);
+                sound.stop();
+                document.getElementById("righta").src = up
+            }
         }
-        async function b() {
-            document.getElementById("note").innerHTML = "B";
-            document.getElementById("leftc").src = "PressedwhiteKeyleft.png";
-            var audio = new Audio('c.wav');
-            audio.volume = slider.value / 100;
-            audio.play();
-            await sleep(1000);
-            document.getElementById("leftc").src = "whiteKeyleft.png";
-        }
-        async function c() {
-            document.getElementById("note").innerHTML = "C";
-            document.getElementById("leftc").src = "PressedwhiteKeyleft.png";
-            var audio = new Audio('c.wav');
-            audio.volume = slider.value / 100;
-            audio.play();
-            await sleep(1000);
-            document.getElementById("leftc").src = "whiteKeyleft.png";
-
-        }
-        async function d() {
-            document.getElementById("note").innerHTML = "D";
-            document.getElementById("middled").src = "PressedwhiteKeyleft.png";
-            var audio = new Audio('d.wav');
-            audio.volume = slider.value / 100;
-            audio.play();
-            await sleep(1000);
-            document.getElementById("middled").src = "whiteKeyleft.png";
-        }
-        async function e() {
-            document.getElementById("note").innerHTML = "E";
-            document.getElementById("righte").src = "PressedWhiteKeyRight.png";
-            var audio = new Audio('e.wav');
-            audio.volume = slider.value / 100;
-            audio.play();
-            await sleep(1000);
-            document.getElementById("righte").src = "WhiteKeyRight.png";
-        }
-        async function f() {
-            document.getElementById("note").innerHTML = "F";
-            document.getElementById("leftf").src = "PressedwhiteKeyleft.png";
-            var audio = new Audio('f.wav');
-            audio.volume = slider.value / 100;
-            audio.play();
-            await sleep(1000);
-            document.getElementById("leftf").src = "whiteKeyleft.png";
-        }
-        async function g() {
-            document.getElementById("note").innerHTML = "G";
-            document.getElementById("middleg").src = "PressedWhiteKeyRight.png";
-            var audio = new Audio('g.wav');
-            audio.volume = slider.value / 100;
-            audio.play();
-            await sleep(1000);
-            document.getElementById("middleg").src = "WhiteKeyRight.png";
-        }
-
+        makeNote("leftc", "c", "c.wav", "whiteKeyleft.png", "PressedwhiteKeyleft.png");
+        makeNote("leftd", "d", "d.wav", "whiteKeyleft.png", "PressedwhiteKeyleft.png");
+        makeNote("lefte", "e", "e.wav", "whiteKeyleft.png", "PressedwhiteKeyleft.png");
+        makeNote("leftf", "f", "f.wav", "whiteKeyleft.png", "PressedwhiteKeyleft.png");
+        makeNote("leftg", "g", "g.wav", "whiteKeyleft.png", "PressedwhiteKeyleft.png");
+        makeNote("lefta", "a", "a.wav", "whiteKeyleft.png", "PressedwhiteKeyleft.png");
+        
+        
     </script>
 
 
