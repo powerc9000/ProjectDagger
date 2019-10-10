@@ -65,7 +65,7 @@
         function makeNote(id, name, wav, up, down){
             let sound;
             window[name] = async function(){
-                if(sound) sound.stop();
+                if(sound) sound.pause();
                 document.getElementById("note").innerHTML = name.toUpperCase();
                 document.getElementById(id).src = down
                 sound = new Audio(wav);
@@ -73,7 +73,7 @@
                 sound.play();
                 
                 await sleep(1000);
-                sound.stop();
+                sound.pause();
                 document.getElementById("righta").src = up
             }
         }
